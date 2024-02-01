@@ -26,25 +26,7 @@ namespace Week2_GAClassMethods_Hongfei
             samStudent.DiplayStudentInfo();
 
             //Generage random students and add students list
-            static List<Student> GenerateRandomStudents()
-            {
-                List<Student> students = new List<Student>();
-                //Random object created
-                Random random = new Random();
-                for( int i=1; i <=5; i++ )
-                {
-                    //Create new instance with student name value
-                    Student student = new Student($"Student{i}");
-                    for ( int j = 0; j<5; j++ ) 
-                    { 
-                        //Add random score into student score list
-                        student.ExamScoures.Add(random.Next(0,101));
-                    }
-                    //Each of student with 5 exam scores add students list
-                    students.Add(student);
-                }
-                return students;
-            }
+            
 
             List<Student> randomStudents = GenerateRandomStudents();
             //Add student to this list 
@@ -58,7 +40,29 @@ namespace Week2_GAClassMethods_Hongfei
 
             Console.ReadKey();
         }
+        static List<Student> GenerateRandomStudents()
+        {
+            List<Student> students = new List<Student>();
+            //Random object created
+            Random random = new Random();
+            for (int i = 1; i <=5; i++)
+            {
+                //Create new instance with student name value
+                Student student = new Student($"Student{i}");
+                for (int j = 0; j<5; j++)
+                {
+                    //Add random score into student score list
+                    student.ExamScoures.Add(random.Next(0, 101));
+                }
+                //Each of student with 5 exam scores add students list
+                students.Add(student);
+            }
+            return students;
+        }
 
-        
+
+
+
+
     }
 }
